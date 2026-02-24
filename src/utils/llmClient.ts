@@ -617,11 +617,9 @@ function buildMessages(
 ): ChatMessage[] {
   const messages: ChatMessage[] = [{ role: "system", content: systemPrompt }];
 
-  if (params.context) {
-    messages.push({
-      role: "system",
-      content: `Document Context:\n${params.context}`,
-    });
+  const context = typeof params.context === "string" ? params.context.trim() : "";
+  if (context) {
+    messages[0].content = `${systemPrompt}\n\nDocument Context:\n${context}`;
   }
 
   if (params.history?.length) {

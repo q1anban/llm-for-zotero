@@ -27,6 +27,9 @@
     "lint:fix": "prettier --write . && eslint . --fix",
     "release": "zotero-plugin release",
     "test": "zotero-plugin test",
+    "test:task2": "mocha node-test/task-2-system-cardinality.test.js",
+    "test:task4": "mocha node-test/task-4-regression-invariants.test.js",
+    "test:task6": "mocha node-test/task-6-strict-compat.test.js",
     "update-deps": "npm update --save"
   },
   "dependencies": {
